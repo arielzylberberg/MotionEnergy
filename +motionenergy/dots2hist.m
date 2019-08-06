@@ -1,14 +1,14 @@
 function dotsH = dots2hist(dots,varargin)
 %dotsH = dots2hist(dots,varargin)
-%output: tiempo,irrelevante,relevante
+%output: time,irrelevant,relevant
 
-N = 203;
+N = 203; % number of bins/pixels. Careful: must be enough pixels to cover the whole stimulus.
 for i=1:length(varargin)
     if isequal(varargin{i},'msize')
         N = varargin{i+1};
     end
 end
-nframes = length(dots); %??
+nframes = length(dots);
 
 % dotsHist = cell(1,nframes);
 st = nan(N,N,nframes);

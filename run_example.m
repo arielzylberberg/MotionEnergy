@@ -23,4 +23,10 @@ legend('R high','R low','L low','L high')
 xlabel('time step')
 ylabel('motion energy (a.u.)')
 
+%% example of making the 3D histogram from dot positions
 
+load dot_positions.mat % x,y dot positions, in pixels
+
+stim = motionenergy.dots2hist(dot_positions);
+sf = 75;
+motion_energy = motionenergy.motionfilter(stim,sf,'sigmac',0.5,'doplot',1);
